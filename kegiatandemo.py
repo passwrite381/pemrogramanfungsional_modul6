@@ -12,13 +12,13 @@ overlay_image = Image.open(overlay_image_path)
 overlay_image = overlay_image.convert("RGBA")
 
 # TODO 2: Ubah gambar background
-background_image = background_image.convert('L')  # Grayscale
-background_image = background_image.rotate(30)  # Rotasi 30 derajat
-background_image = background_image.filter(ImageFilter.BLUR)  # Blur
+background_image = background_image.convert('L') 
+background_image = background_image.rotate(30)  
+background_image = background_image.filter(ImageFilter.BLUR)  
 
 # TODO 3: Ubah tingkat kecerahan dan kontras gambar overlay
-brightness_factor = 1.62  # Ganti dengan 2 digit NIM bagian belakang
-contrast_factor = 1.62  # Ganti dengan 2 digit NIM bagian belakang
+brightness_factor = 1.81  # Ganti dengan 2 digit NIM bagian belakang
+contrast_factor = 1.81  # Ganti dengan 2 digit NIM bagian belakang
 
 brightness_enhancer = ImageEnhance.Brightness(overlay_image)
 brightened_overlay = brightness_enhancer.enhance(brightness_factor)
@@ -40,7 +40,7 @@ font_path = r"c:\WINDOWS\Fonts\ARIALN.TTF"
 font = ImageFont.truetype(font_path, size=24)
 text = "Informatika JOSSS!"
 text_bbox = draw.textbbox((0, 0), text, font=font)
-text_x = (result_image.width - text_bbox[2]) // 2
+text_x = (result_image.width - text_bbox[2]) // 5
 text_y = (result_image.height - text_bbox[3]) // 1.4
 draw.text((text_x, text_y), text, font=font, fill="white")
 
